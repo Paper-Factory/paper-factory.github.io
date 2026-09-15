@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Paper Factory | Tenure & Research Group Management</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#1e3a8a',    /* Deep Blue */
+                            yellow: '#facc15',  /* Vibrant Yellow */
+                            light: '#dbeafe',   /* Light Blue Accent */
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased">
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 bg-white/80 backdrop-blur-md border-b border-slate-200 z-50">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="font-bold text-xl tracking-tight text-brand-blue">The Paper Factory</div>
+            <div class="hidden md:flex space-x-6 text-sm font-bold text-slate-600">
+                <a href="#about" class="hover:text-brand-blue transition">Background</a>
+                <a href="#book" class="hover:text-brand-blue transition">Upcoming Book</a>
+                <a href="#booking" class="hover:text-brand-blue transition">Booking</a>
+                <a href="#faq" class="hover:text-brand-blue transition">FAQ</a>
+            </div>
+            <a href="#booking" class="bg-brand-blue text-brand-yellow px-5 py-2 rounded-md text-sm font-bold hover:bg-blue-900 transition">Book Now</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="max-w-5xl mx-auto px-6 py-24 text-center">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight mb-6">
+            Navigate the Tenure Track with <span class="text-brand-blue">Confidence</span>
+        </h1>
+        <p class="text-lg text-slate-600 max-w-2xl mx-auto mb-10 leading-relaxed">
+            Strategic guidance for early-career academics. Learn how to effectively manage your PhD research group, secure funding, and build a compelling case for tenure and promotion.
+        </p>
+        <a href="#booking" class="inline-block bg-brand-yellow text-brand-blue px-8 py-3 rounded-lg font-bold shadow-lg shadow-yellow-500/30 hover:bg-yellow-400 transition duration-300">
+            Schedule a Free 30 Minutes Call
+        </a>
+    </section>
+
+    <!-- Background & Experience -->
+    <section id="about" class="bg-white py-20 border-y border-slate-200">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-brand-blue mb-8">Background & Experience</h2>
+            <div class="prose prose-lg text-slate-600 max-w-none">
+                <p class="mb-4">
+                    The transition from an individual contributor to a principal investigator is one of the most challenging leaps in academia. Leading a small group of PhD students while simultaneously pushing for tenure requires a strategic balance of mentorship, grant acquisition, and high-impact publishing.
+                </p>
+                <p class="mb-4">
+                    I am Gianluca Demartini, a Professor in Data Science at the University of Queensland (UQ) and Lead of DLab. Alongside my role as a visiting professor at the Technical University of Munich (TUM) at the Bildungscampus, my research spans Information Retrieval, Crowdsourcing, Data Quality, and Human-AI Interaction. Over the course of my career, I have published extensively in top-tier venues (such as SIGIR, WWW, and VLDB), served in senior academic capacities, and built a track record of securing competitive international funding.
+                </p>
+                <p>
+                    I understand the unique pressures of the tenure track and the practical realities of scaling research output. My approach is designed to provide you with the actionable frameworks I use to mentor scholars, streamline lab operations, and build a sustainable, successful academic career without sacrificing scientific rigor.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upcoming Book Section -->
+    <section id="book" class="max-w-5xl mx-auto px-6 py-20">
+        <div class="bg-brand-blue rounded-2xl p-8 md:p-12 text-white flex flex-col md:flex-row items-center gap-10 shadow-lg">
+            <!-- Placeholder for Book Cover -->
+            <div class="w-full md:w-1/3 aspect-[3/4] bg-blue-950 rounded-lg flex items-center justify-center border border-blue-800 shadow-xl">
+                <span class="text-blue-300 font-medium text-center px-4">Cover:<br>The Paper Factory</span>
+            </div>
+            <div class="w-full md:w-2/3">
+                <h2 class="text-brand-yellow text-sm font-bold uppercase tracking-wider mb-2">Upcoming Release</h2>
+                <h3 class="text-3xl font-bold mb-4">The Paper Factory:<br>High Output Management of Academic Research Groups</h3>
+                <p class="text-blue-100 mb-6 leading-relaxed">
+                    A practical, process-oriented guide for early-career academics. Learn how to hire the right PhD candidates, foster a healthy and highly productive lab culture, manage research budgets, and ensure consistent, high-impact publication output without burning out.
+                </p>
+                <form class="flex flex-col sm:flex-row gap-3">
+                    <input type="email" placeholder="Enter your email" class="px-4 py-3 rounded-lg text-slate-900 w-full sm:w-auto flex-grow focus:outline-none focus:ring-2 focus:ring-brand-yellow">
+                    <button type="submit" class="bg-brand-yellow text-brand-blue px-6 py-3 rounded-lg font-bold hover:bg-yellow-400 transition">Get Notified</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="bg-white py-20 border-t border-slate-200">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-brand-blue mb-4">Strategy Appointments</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto">
+                    Let's discuss your current challenges and map out a strategy for your group and your tenure application. Initial 30 minutes calls are complimentary.
+                </p>
+            </div>
+            
+            <!-- Google Calendar Embed Placeholder -->
+            <div class="w-full max-w-3xl mx-auto bg-slate-100 rounded-xl h-[600px] flex items-center justify-center border border-slate-200 shadow-inner">
+                <p class="text-slate-500 font-medium text-center px-4">
+                    [Paste your Google Calendar / Appointment Scheduling iframe here] <br>
+                    <span class="text-sm font-normal text-slate-400">e.g., &lt;iframe src="https://calendar.google.com/..."&gt;&lt;/iframe&gt;</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ & Q&A Submission -->
+    <section id="faq" class="max-w-5xl mx-auto px-6 py-20">
+        <h2 class="text-3xl font-bold text-brand-blue mb-10 text-center">Frequently Asked Questions</h2>
+        
+        <!-- Native HTML Accordion for FAQ -->
+        <div class="max-w-3xl mx-auto space-y-4 mb-16">
+            
+            <details class="group bg-white border border-slate-200 rounded-lg p-6 [&_summary::-webkit-details-marker]:hidden shadow-sm">
+                <summary class="flex justify-between items-center font-bold cursor-pointer text-slate-900">
+                    What stage of career is this service best for?
+                    <span class="transition group-open:rotate-180 text-brand-blue">
+                        <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                    </span>
+                </summary>
+                <p class="text-slate-600 mt-4 leading-relaxed">
+                    This framework is optimized for postdocs transitioning to faculty, assistant professors, and early-stage PIs who are within 1 to 5 years of submitting their tenure dossier.
+                </p>
+            </details>
+
+            <details class="group bg-white border border-slate-200 rounded-lg p-6 [&_summary::-webkit-details-marker]:hidden shadow-sm">
+                <summary class="flex justify-between items-center font-bold cursor-pointer text-slate-900">
+                    How frequently should I meet with my PhD students?
+                    <span class="transition group-open:rotate-180 text-brand-blue">
+                        <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                    </span>
+                </summary>
+                <p class="text-slate-600 mt-4 leading-relaxed">
+                    High output relies on consistent feedback loops. You should aim for weekly or bi-weekly 1-on-1 meetings to address roadblocks, supplemented by a weekly all-hands lab meeting where students present to one another. This fosters peer-learning and reduces their sole dependency on you for technical troubleshooting.
+                </p>
+            </details>
+
+            <details class="group bg-white border border-slate-200 rounded-lg p-6 [&_summary::-webkit-details-marker]:hidden shadow-sm">
+                <summary class="flex justify-between items-center font-bold cursor-pointer text-slate-900">
+                    How do I find excellent candidates for a PhD?
+                    <span class="transition group-open:rotate-180 text-brand-blue">
+                        <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                    </span>
+                </summary>
+                <p class="text-slate-600 mt-4 leading-relaxed">
+                    Recruiting is the most important management decision you will make. Build a pipeline by leveraging top undergraduate or master’s students in your own courses for short-term research projects. When recruiting externally, look beyond grades: prioritize curiosity, resilience, and strong communication. Giving a prospective student a small, paid trial task before committing to a 3-4 year journey can mitigate major hiring risks.
+                </p>
+            </details>
+
+            <details class="group bg-white border border-slate-200 rounded-lg p-6 [&_summary::-webkit-details-marker]:hidden shadow-sm">
+                <summary class="flex justify-between items-center font-bold cursor-pointer text-slate-900">
+                    How do I plan for the next funding proposal?
+                    <span class="transition group-open:rotate-180 text-brand-blue">
+                        <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                    </span>
+                </summary>
+                <p class="text-slate-600 mt-4 leading-relaxed">
+                    Treat funding like a rolling pipeline, not a one-off sprint. You should be planning 12 to 18 months in advance. Align your lab's strategic direction with the priorities of major funding bodies (e.g., ARC or Horizon Europe), and spend the year gathering pilot data and building consortium relationships so the actual writing process is backed by momentum and proof of concept.
+                </p>
+            </details>
+
+            <details class="group bg-white border border-slate-200 rounded-lg p-6 [&_summary::-webkit-details-marker]:hidden shadow-sm">
+                <summary class="flex justify-between items-center font-bold cursor-pointer text-slate-900">
+                    What should I do when I attend a scientific conference?
+                    <span class="transition group-open:rotate-180 text-brand-blue">
+                        <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                    </span>
+                </summary>
+                <p class="text-slate-600 mt-4 leading-relaxed">
+                    Stop attending conferences just to sit in the audience and listen to papers you can read online. As a PI, conferences are your highest-leverage networking events. Use them to pre-schedule 1-on-1 coffees with potential collaborators, program officers, and future letter-writers for your tenure dossier. It is also your primary hunting ground for recruiting exceptional postdocs.
+                </p>
+            </details>
+
+        </div>
+
+        <!-- Submit a Question Form -->
+        <div class="max-w-3xl mx-auto bg-brand-light/30 p-8 rounded-xl border border-blue-100">
+            <h3 class="text-xl font-bold text-brand-blue mb-2">Have a specific question?</h3>
+            <p class="text-sm text-slate-600 mb-6">
+                <strong>Disclosure:</strong> By submitting a question below, you consent that your question and its answer may be published anonymously on this website or in related materials to help other early-career academics.
+            </p>
+            
+            <!-- Google Form Embed Placeholder -->
+            <div class="w-full bg-white rounded-lg h-[400px] flex items-center justify-center border border-slate-200 shadow-inner">
+                <p class="text-slate-500 font-medium text-center px-4">
+                    [Paste your Google Form iframe here] <br>
+                    <span class="text-sm font-normal text-slate-400">Ensure the form background matches or is transparent.</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-blue py-8 text-center text-blue-200">
+        <div class="max-w-5xl mx-auto px-6">
+            <p>&copy; 2026 The Paper Factory. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
