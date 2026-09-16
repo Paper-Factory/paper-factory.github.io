@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claim Your Session | The Paper Factory</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#1e3a8a',    /* Deep Blue */
+                            yellow: '#facc15',  /* Vibrant Yellow */
+                            light: '#dbeafe',   /* Light Blue Accent */
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased">
+
+    <!-- Simple Nav -->
+    <nav class="sticky top-0 bg-white/80 backdrop-blur-md border-b border-slate-200 z-50">
+        <div class="max-w-5xl mx-auto px-6 py-4">
+            <a href="index.html" class="font-bold text-xl tracking-tight text-brand-blue">The Paper Factory</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <section class="max-w-3xl mx-auto px-6 py-24 text-center">
+        <h1 class="text-4xl font-extrabold text-slate-900 leading-tight mb-4">Claim Your Partner Session</h1>
+        <p class="text-lg text-slate-600 max-w-2xl mx-auto mb-12">
+            Enter the complimentary access code you received to verify your pilot program eligibility and schedule your 30-minute high-quality strategy call.
+        </p>
+
+        <!-- Claim Form -->
+        <div class="bg-white p-10 rounded-2xl border border-slate-200 shadow-lg text-left max-w-xl mx-auto">
+            <h2 class="text-2xl font-bold text-brand-blue mb-8">Enter Verification Code</h2>
+            
+            <form id="claimForm" class="space-y-6">
+                <div>
+                    <label for="claimCode" class="block text-sm font-bold text-slate-700 mb-2">Your 8-Character Code</label>
+                    <input type="text" id="claimCode" required placeholder="e.g., VIBECODE" class="w-full px-5 py-4 text-lg rounded-lg border-2 border-slate-200 bg-white focus:outline-none focus:ring-4 focus:ring-brand-light focus:border-brand-blue transition">
+                    <p id="errorMessage" class="text-red-600 text-sm mt-3 hidden font-semibold">❌ The code you entered is invalid or has expired. Please try again or contact support.</p>
+                </div>
+                
+                <button type="submit" class="w-full bg-brand-blue text-brand-yellow py-4 rounded-lg font-bold text-lg hover:bg-blue-900 transition shadow-lg shadow-blue-900/20">
+                    Verify & Proceed
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-blue py-8 mt-12 text-center text-blue-200">
+        <div class="max-w-5xl mx-auto px-6">
+            <p>&copy; 2026 The Paper Factory. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Verification Logic (⚠️ Client-side check, simple security warning) -->
+    <script>
+        document.getElementById('claimForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent page reload
+
+            // 1. Get the user input
+            const userInput = document.getElementById('claimCode').value.trim().toUpperCase();
+            const errorMessage = document.getElementById('errorMessage');
+
+            // 2. Define your list of *valid* insecure codes (⚠️ INSECURE: visible in source code)
+            const validCodes = [
+                'TENURE2026',
+                'VIBECODE',
+                'DLABPILOT',
+                'TUMPILOT',
+                'UQPILOT'
+            ];
+
+            // 3. Define the obscure URL of your hidden booking page
+            // (e.g., https://yourusername.github.io/paper-factory/strategy-session-gd-hidden.html)
+            const hiddenBookingUrl = 'strategy-session-gd-hidden.html';
+
+            // 4. Verify and redirect
+            if (validCodes.includes(userInput)) {
+                // If code is correct, redirect them
+                window.location.href = hiddenBookingUrl;
+            } else {
+                // If code is incorrect, show the error message
+                errorMessage.classList.remove('hidden');
+                document.getElementById('claimCode').classList.add('border-red-600');
+            }
+        });
+    </script>
+
+</body>
+</html>
