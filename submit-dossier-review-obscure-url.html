@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Your Dossier | The Paper Factory</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#1e3a8a',
+                            yellow: '#facc15',
+                            light: '#dbeafe',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 bg-white/80 backdrop-blur-md border-b border-slate-200 z-50">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="font-bold text-xl tracking-tight text-brand-blue">The Paper Factory</a>
+            <span class="bg-brand-yellow text-brand-blue px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Pilot Review Unlocked</span>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow max-w-5xl mx-auto px-6 py-16 w-full">
+        <div class="text-center mb-10">
+            <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">Submit Your Dossier</h1>
+            <p class="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+                Provide your academic application materials or promotion dossier below. 
+            </p>
+        </div>
+
+        <!-- Submission Interface Container -->
+        <div class="bg-white rounded-2xl border border-slate-200 shadow-xl overflow-hidden max-w-3xl mx-auto">
+            
+            <!-- Value Reminder Bar -->
+            <div class="bg-brand-blue text-white p-6 md:p-8 flex flex-col md:flex-row gap-6 items-center">
+                <div class="w-16 h-16 bg-blue-800 rounded-full flex items-center justify-center flex-shrink-0 border-2 border-brand-yellow">
+                    <span class="text-2xl">⭐</span>
+                </div>
+                <div>
+                    <h3 class="font-bold text-xl text-brand-yellow mb-2">What happens next?</h3>
+                    <p class="text-blue-100 text-sm leading-relaxed">
+                        Your materials will undergo a comprehensive, asynchronous review. You will receive a detailed structural critique aimed at aligning your record with top-tier international standards, culminating in <strong>3 highly actionable insights</strong> you can implement immediately.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Form iframe placeholder -->
+            <div class="w-full h-[800px] bg-slate-50 flex items-center justify-center border-t border-slate-200">
+                <p class="text-slate-400 font-medium text-center px-6">
+                    [Paste your Google Form iframe code here]<br>
+                    <span class="text-sm font-normal">Use a Google Form to easily collect file uploads (PDFs, Word Docs) or Cloud Drive links.</span>
+                </p>
+                <!-- EXAMPLE OF HOW IT SHOULD LOOK: -->
+                <!-- <iframe src="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe> -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-blue py-8 text-center text-blue-200 border-t border-blue-900/50">
+        <div class="max-w-5xl mx-auto px-6">
+            <a href="mailto:your.email@uq.edu.au" class="inline-flex items-center text-brand-yellow hover:text-white transition duration-300 text-sm mb-4">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                your.email@uq.edu.au
+            </a>
+            <p class="text-xs">&copy; 2026 The Paper Factory. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
