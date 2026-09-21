@@ -57,14 +57,21 @@
                 </div>
             </div>
 
-            <!-- Form iframe placeholder -->
-            <div class="w-full h-[800px] bg-slate-50 flex items-center justify-center border-t border-slate-200">
-                <p class="text-slate-400 font-medium text-center px-6">
-                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSekj9DFuOytpypA6bpmuJpQG3t-aZCvN5JmTT_CBpHEMED4TA/viewform?embedded=true" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe><br>
-                    <span class="text-sm font-normal">Use this Google Form to easily upload your document in PDF.</span>
-                </p>
-            </div>
-        </div>
+            <!-- Form iframe container -->
+<div class="w-full h-[1000px] bg-slate-50 border-t border-slate-200 relative">
+    
+    <!-- IFRAME - Now it will actually stretch to 100% of the container -->
+                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSekj9DFuOytpypA6bpmuJpQG3t-aZCvN5JmTT_CBpHEMED4TA/viewform?embedded=true" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    
+</div>
+
+<!-- Helper text placed safely below the iframe -->
+<div class="w-full bg-slate-50 pb-6 border-b border-slate-200">
+    <p class="text-slate-400 text-sm text-center px-6">
+        Use this Google Form to easily upload your document in PDF.
+    </p>
+</div>
+
     </main>
 
     <!-- Footer -->
