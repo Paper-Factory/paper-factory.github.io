@@ -44,8 +44,8 @@
             
             <form id="claimForm" class="space-y-6">
                 <div>
-                    <label for="claimCode" class="block text-sm font-bold text-slate-700 mb-2">Your 8-Character Code</label>
-                    <input type="text" id="claimCode" required placeholder="e.g., VIBECODE" class="w-full px-5 py-4 text-lg rounded-lg border-2 border-slate-200 bg-white focus:outline-none focus:ring-4 focus:ring-brand-light focus:border-brand-blue transition">
+                    <label for="claimCode" class="block text-sm font-bold text-slate-700 mb-2">Your Code</label>
+                    <input type="text" id="claimCode" required placeholder="e.g., VERIFICATION CODE" class="w-full px-5 py-4 text-lg rounded-lg border-2 border-slate-200 bg-white focus:outline-none focus:ring-4 focus:ring-brand-light focus:border-brand-blue transition">
                     <p id="errorMessage" class="text-red-600 text-sm mt-3 hidden font-semibold">❌ The code you entered is invalid or has expired. Please try again or contact support.</p>
                 </div>
                 
@@ -74,11 +74,7 @@
 
             // 2. Define your list of *valid* insecure codes (⚠️ INSECURE: visible in source code)
             const validCodes = [
-                'TENURE2026',
-                'VIBECODE',
-                'DLABPILOT',
-                'TUMPILOT',
-                'UQPILOT'
+                'PILOT2026'
             ];
 
             // 3. Define the obscure URL of your hidden booking page
