@@ -1,4 +1,38 @@
-<!-- Main Content -->
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Your Dossier | The Paper Factory</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#1e3a8a',
+                            yellow: '#facc15',
+                            light: '#dbeafe',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 bg-white/80 backdrop-blur-md border-b border-slate-200 z-50">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="font-bold text-xl tracking-tight text-brand-blue">The Paper Factory</a>
+            <span class="bg-brand-yellow text-brand-blue px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Pilot Review Unlocked</span>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
 <main class="flex-grow max-w-5xl mx-auto px-6 py-16 w-full">
     <div class="text-center mb-10">
         <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">Submit Your Dossier</h1>
@@ -41,3 +75,17 @@
         </div>
     </div>
 </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-blue py-8 text-center text-blue-200 border-t border-blue-900/50">
+        <div class="max-w-5xl mx-auto px-6">
+            <a href="mailto:your.email@uq.edu.au" class="inline-flex items-center text-brand-yellow hover:text-white transition duration-300 text-sm mb-4">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                your.email@uq.edu.au
+            </a>
+            <p class="text-xs">&copy; 2026 The Paper Factory. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
