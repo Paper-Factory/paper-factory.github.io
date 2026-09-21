@@ -52,19 +52,27 @@
                 </p>
             </div>
 
-            <!-- Calendar iframe placeholder -->
-            <div class="w-full h-[700px] bg-slate-50 flex items-center justify-center">
-                <p class="text-slate-400 font-medium text-center px-6">
-                    <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2mJWryAAHVzVKUjKMgaXWMuE5oIdxPU_FUoH17qEdZJ6q2EJ--LUoEPSZr0-ZTOvnZbrBw2zbU?gv=true" style="border: 0" width="100%" height="100%" frameborder="0"></iframe>
-<br>
-                    <span class="text-sm font-normal">You will receive an e-mail confirmation upon booking your slot.</span>
-                </p>
-                <!-- EXAMPLE OF HOW IT SHOULD LOOK: -->
-                <!-- <iframe src="https://calendar.google.com/calendar/appointments/schedules/..." width="100%" height="100%" frameborder="0"></iframe> -->
-                <!-- Google Calendar Appointment Scheduling begin -->
-<!-- <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2mJWryAAHVzVKUjKMgaXWMuE5oIdxPU_FUoH17qEdZJ6q2EJ--LUoEPSZr0-ZTOvnZbrBw2zbU?gv=true" style="border: 0" width="100%" height="600" frameborder="0"></iframe> -->
-<!-- end Google Calendar Appointment Scheduling -->
-            </div>
+            <!-- Calendar Interface Container (Updated Fix) -->
+<div class="bg-white rounded-2xl border border-slate-200 shadow-xl overflow-hidden max-w-4xl mx-auto">
+    
+    <!-- Value Reminder Bar -->
+    <!-- (This part remains the same) -->
+
+    <!-- Form iframe container - increased height to h-[750px] -->
+    <div class="w-full h-[750px] bg-slate-50 border-t border-slate-200 relative">
+        
+        <!-- IFRAME - It will now stretch smoothly -->
+        <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2mJWryAAHVzVKUjKMgaXWMuE5oIdxPU_FUoH17qEdZJ6q2EJ--LUoEPSZr0-ZTOvnZbrBw2zbU?gv=true" style="border: 0" width="100%" height="100%" frameborder="0"></iframe>
+
+    </div>
+</div>
+
+<!-- Helper text placed safely below the card -->
+<div class="w-full text-center py-6">
+    <p class="text-slate-400 text-sm px-6">
+        You will receive an e-mail confirmation upon booking your slot.
+    </p>
+</div>
         </div>
     </main>
 
