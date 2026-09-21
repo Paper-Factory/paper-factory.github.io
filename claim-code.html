@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Claim Your Session | The Paper Factory</title>
+    <title>Verify Access | The Paper Factory Pilot</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -21,76 +21,205 @@
             }
         }
     </script>
+    <style>
+        /* Simple animation for showing service cards */
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-slideIn {
+            animation: slideIn 0.3s ease-out forwards;
+        }
+    </style>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased">
 
     <!-- Simple Nav -->
     <nav class="sticky top-0 bg-white/80 backdrop-blur-md border-b border-slate-200 z-50">
-        <div class="max-w-5xl mx-auto px-6 py-4">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
             <a href="index.html" class="font-bold text-xl tracking-tight text-brand-blue">The Paper Factory</a>
+            <span class="bg-brand-yellow text-brand-blue px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Pilot Access</span>
         </div>
     </nav>
 
-    <!-- Main Content -->
-    <section class="max-w-3xl mx-auto px-6 py-24 text-center">
-        <h1 class="text-4xl font-extrabold text-slate-900 leading-tight mb-4">Claim Your Partner Session</h1>
-        <p class="text-lg text-slate-600 max-w-2xl mx-auto mb-12">
-            Enter the complimentary access code you received to verify your pilot program eligibility and schedule your 30-minute high-quality strategy call.
-        </p>
+    <!-- Main Content Area -->
+    <section class="max-w-4xl mx-auto px-6 py-16 md:py-24">
+        
+        <!-- INITIAL STATE: Verification Form -->
+        <div id="verificationSection" class="text-center">
+            <h1 class="text-4xl font-extrabold text-slate-900 leading-tight mb-4">Claim Your Advisor Session</h1>
+            <p class="text-lg text-slate-600 max-w-2xl mx-auto mb-12Leading-relaxed">
+                Enter your unique complimentary access code below. This will verify your eligibility for the pilot program and unlock your chosen strategic service.
+            </p>
 
-        <!-- Claim Form -->
-        <div class="bg-white p-10 rounded-2xl border border-slate-200 shadow-lg text-left max-w-xl mx-auto">
-            <h2 class="text-2xl font-bold text-brand-blue mb-8">Enter Verification Code</h2>
-            
-            <form id="claimForm" class="space-y-6">
-                <div>
-                    <label for="claimCode" class="block text-sm font-bold text-slate-700 mb-2">Your Code</label>
-                    <input type="text" id="claimCode" required placeholder="e.g., VERIFICATION CODE" class="w-full px-5 py-4 text-lg rounded-lg border-2 border-slate-200 bg-white focus:outline-none focus:ring-4 focus:ring-brand-light focus:border-brand-blue transition">
-                    <p id="errorMessage" class="text-red-600 text-sm mt-3 hidden font-semibold">❌ The code you entered is invalid or has expired. Please try again or contact support.</p>
-                </div>
+            <div class="bg-white p-8 md:p-10 rounded-2xl border border-slate-200 shadow-lg text-left max-w-xl mx-auto">
+                <h2 class="text-2xl font-bold text-brand-blue mb-8">Enter Verification Code</h2>
                 
-                <button type="submit" class="w-full bg-brand-blue text-brand-yellow py-4 rounded-lg font-bold text-lg hover:bg-blue-900 transition shadow-lg shadow-blue-900/20">
-                    Verify & Proceed
-                </button>
-            </form>
+                <form id="claimForm" class="space-y-6">
+                    <div>
+                        <label for="claimCode" class="block text-sm font-bold text-slate-700 mb-2">Your Pilot Code</label>
+                        <input type="text" id="claimCode" required placeholder="e.g., TUMPILOT24" class="w-full px-5 py-4 text-lg rounded-lg border-2 border-slate-200 bg-white focus:outline-none focus:ring-4 focus:ring-brand-light focus:border-brand-blue transition font-mono tracking-wider">
+                        <p id="errorMessage" class="text-red-600 text-sm mt-3 hidden font-semibold flex items-center">
+                            <svg class="w-4 h-4 mr-1.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path></svg>
+                            Invalid or expired code. Please try again.
+                        </p>
+                    </div>
+                    
+                    <button type="submit" class="w-full bg-brand-blue text-brand-yellow py-4 rounded-lg font-bold text-lg hover:bg-blue-900 transition shadow-lg shadow-blue-900/20 flex items-center justify-center">
+                        Verify Code & Unlock Service
+                    </button>
+                </form>
+            </div>
         </div>
+
+        <!-- SUCCESS STATE: Service Unlocked (Hidden by default) -->
+        <div id="successSection" class="hidden animate-slideIn text-center">
+            <div class="mb-10 text-6xl">🎉</div>
+            <h1 class="text-4xl font-extrabold text-slate-900 leading-tight mb-3">Access Granted!</h1>
+            <p class="text-lg text-slate-600 max-w-2xl mx-auto mb-12Leading-relaxed">
+                Your code has been successfully verified. You have unlocked complimentary access to the following pilot service:
+            </p>
+
+            <!-- Dynamic Service Card Container -->
+            <div id="serviceCardContainer" class="max-w-2xl mx-auto">
+                <!-- Javascript will inject the correct card here -->
+            </div>
+        </div>
+
     </section>
 
     <!-- Footer -->
-    <footer class="bg-brand-blue py-8 mt-12 text-center text-blue-200">
+    <footer class="bg-brand-blue py-12 mt-12 text-center text-blue-200 border-t border-blue-900/50">
         <div class="max-w-5xl mx-auto px-6">
-            <p>&copy; 2026 The Paper Factory. All rights reserved.</p>
+            <a href="mailto:your.email@uq.edu.au" class="inline-flex items-center text-brand-yellow hover:text-white transition duration-300 text-base mb-6">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                Support: your.email@uq.edu.au
+            </a>
+            <p class="text-sm">&copy; 2026 The Paper Factory. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Verification Logic (⚠️ Client-side check, simple security warning) -->
+    <!-- Verification & Dynamic UI Logic (⚠️ Client-side, simple security warning) -->
     <script>
-        document.getElementById('claimForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent page reload
+        /**
+         * 1. Define Services & Their Private URLs
+         * 
+         * Change these URLs to the actual filenames you create (e.g., dossier-submission.html).
+         * Keep filenames obscured (like adding a random hash) for basic "security-by-obscurity".
+         */
+        const serviceRedirects = {
+            dossierReview: {
+                title: "Doss dossier Review & Critique",
+                description: "Asynchronous review of your academic application/promotion material with 3 actionable insights.",
+                icon: `<svg class="w-8 h-8 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>`,
+                actionText: "Proceed to Dossier Submission",
+                url: "submit-dossier-review-obscure-url.html" // <- CHANGE THIS
+            },
+            strategyCall: {
+                title: "1:1 Live Strategy Session (30 Min)",
+                description: "Live video consultation focused on your tenure track, lab management, or international strategy.",
+                icon: `<svg class="w-8 h-8 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>`,
+                actionText: "Book Your Time Slot",
+                url: "book-strategy-call-obscure-url.html" // <- CHANGE THIS
+            }
+        };
 
-            // 1. Get the user input
+        /**
+         * 2. Map Codes to Specific Services (The "Lockbox" Logic)
+         * 
+         * Codes are NOT secure; they are visible in this file's source code.
+         * The key is 'CODE': value is the service key defined above ('strategyCall' or 'dossierReview')
+         */
+        const codeMap = {
+            // General Partner Codes
+            'VIBECODE': 'strategyCall',
+            'TENURE2026': 'dossierReview',
+            
+            // Specific Institution Codes
+            'TUMPILOT24': 'strategyCall',
+            'UQPILOT24': 'dossierReview',
+            'DLABCOMP': 'strategyCall'
+            
+            // Add more comma-separated codes here as needed
+        };
+
+        // --- Core UI Logic (You shouldn't need to change much below this) ---
+
+        document.getElementById('claimForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent standard form reload
+
             const userInput = document.getElementById('claimCode').value.trim().toUpperCase();
             const errorMessage = document.getElementById('errorMessage');
+            const inputField = document.getElementById('claimCode');
 
-            // 2. Define your list of *valid* insecure codes (⚠️ INSECURE: visible in source code)
-            const validCodes = [
-                'PILOT2026'
-            ];
+            // Reset error state
+            errorMessage.classList.add('hidden');
+            inputField.classList.remove('border-red-600');
 
-            // 3. Define the obscure URL of your hidden booking page
-            // (e.g., https://yourusername.github.io/paper-factory/strategy-session-gd-hidden.html)
-            const hiddenBookingUrl = 'strategy-session-gd-hidden.html';
+            // Check if the code exists in our map
+            if (userInput in codeMap) {
+                // Determine the service linked to this code
+                const serviceKey = codeMap[userInput];
+                const serviceInfo = serviceRedirects[serviceKey];
 
-            // 4. Verify and redirect
-            if (validCodes.includes(userInput)) {
-                // If code is correct, redirect them
-                window.location.href = hiddenBookingUrl;
+                if (serviceInfo) {
+                    // Code is valid! Update UI and show success state.
+                    renderSuccessState(serviceInfo);
+                } else {
+                    // Logic error: code exists but links to an undefined service.
+                    showError(errorMessage, inputField, "Internal error: Service undefined.");
+                }
             } else {
-                // If code is incorrect, show the error message
-                errorMessage.classList.remove('hidden');
-                document.getElementById('claimCode').classList.add('border-red-600');
+                // Code is invalid.
+                showError(errorMessage, inputField, "Invalid or expired code.");
             }
         });
+
+        /**
+         * Renders the dynamic success card and hides the form.
+         */
+        function renderSuccessState(service) {
+            const container = document.getElementById('serviceCardContainer');
+            
+            // Build the HTML for the success card dynamically
+            container.innerHTML = `
+                <div class="bg-white p-10 rounded-2xl border-2 border-brand-yellow shadow-2xl text-left">
+                    <div class="flex items-center gap-5 mb-8 pb-8 border-b border-slate-100">
+                        <div class="w-16 h-16 bg-brand-light rounded-xl flex items-center justify-center flex-shrink-0">
+                            ${service.icon}
+                        </div>
+                        <div>
+                            <span class="bg-brand-yellow/30 text-brand-blue px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-2 inline-block">Pilot Service Unlocked</span>
+                            <h3 class="text-3xl font-bold text-slate-900">${service.title}</h3>
+                        </div>
+                    </div>
+
+                    <p class="text-slate-700 text-lg mb-10Leading-relaxed">
+                        ${service.description}
+                    </p>
+
+                    <div class="mt-12 text-center">
+                        <a href="${service.url}" class="inline-block bg-brand-blue text-brand-yellow px-10 py-4 rounded-lg font-bold text-lg hover:bg-blue-900 transition shadow-lg shadow-blue-900/30 w-full sm:w-auto">
+                            ${service.actionText} →
+                        </a>
+                    </div>
+                </div>
+            `;
+
+            // Swap sections
+            document.getElementById('verificationSection').classList.add('hidden');
+            document.getElementById('successSection').classList.remove('hidden');
+        }
+
+        /**
+         * Generic error handler for the form
+         */
+        function showError(errorElement, inputElement, message) {
+            errorElement.textContent = `❌ ${message}`;
+            errorElement.classList.remove('hidden');
+            inputElement.classList.add('border-red-600');
+            inputElement.focus();
+        }
     </script>
 
 </body>
